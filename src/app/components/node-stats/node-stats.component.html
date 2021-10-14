@@ -1,0 +1,63 @@
+<div class="container-fluid justify-content-center my-5">
+    <div>
+        <form>
+            <mat-form-field style="width: 100%" appearance="fill">
+                <mat-label>Please choose Node to proceed</mat-label>
+                <mat-select style="width: 100%; max-height: 200px" aria-labelledby="dropdownMenuButton" (selectionChange)="getId($event.value)">
+                    <mat-option *ngFor="let node of nodeArray" [value]="node.nodeId">
+                        {{ node.nodeId }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+    </div>
+    <button class="btn btn-secondary" (click)="ExportTOExcel()" [disabled]="disableButton">
+    Click Here to Download As Excel
+  </button>
+    <div class="row float-right">
+        <button class="btn btn-primary" (click)="fetchData()" [disabled]="disableButton">
+      Press to show Data
+    </button>
+    </div>
+</div>
+<!-- <div class="container-fluid justify-content-center p-5">
+    <div class="row">
+        <div class="col-lg-4 p-2 border border-dark" style="text-align: center">
+            Gas
+        </div>
+        <div class="col-lg-4 p-2 border border-dark" style="text-align: center">
+            Percentage
+        </div>
+        <div class="col-lg-4 p-2 border border-dark" style="text-align: center">
+            Time
+        </div>
+    </div>
+    <div class="row" *ngFor="let gas of gasArrayReady">
+        <div class="col-lg-4 p-2 border border-dark" style="text-align: center">
+            {{ gas.gasName }}
+        </div>
+        <div class="col-lg-4 p-2 border border-dark" style="text-align: center">
+            {{ gas.percentage }}
+        </div>
+        <div class="col-lg-4 p-2 border border-dark" style="text-align: center">
+            12 PM
+        </div>
+    </div>
+</div> -->
+
+<table class="table table-bordered m-2" #TABLE>
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Gas</th>
+            <th scope="col">Mean Value</th>
+            <th scope="col">Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="text-center" *ngFor="let gas of gasArrayReady">
+            <td>{{ gas.gasName }}</td>
+            <td>{{ gas.Mean }}</td>
+            <td>{{ gas.timeStamp }}</td>
+        </tr>
+    </tbody>
+</table>

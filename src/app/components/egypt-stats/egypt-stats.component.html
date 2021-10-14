@@ -1,0 +1,19 @@
+<button class="btn btn-secondary" (click)="ExportTOExcel()">
+  Click Here to Download As Excel
+</button>
+<table class="table table-bordered m-2" #TABLE>
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Gas</th>
+            <th scope="col">Mean Value</th>
+            <th scope="col">Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="text-center" *ngFor="let gas of egyptGasArrayReady">
+            <td>{{ gas.gasName }}</td>
+            <td>{{ gas.Mean }}</td>
+            <td>{{ gas.timeStamp }}</td>
+        </tr>
+    </tbody>
+</table>

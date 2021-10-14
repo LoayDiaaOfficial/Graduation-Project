@@ -1,0 +1,75 @@
+.main-section {
+    background: url("../../../assets/hero-bg.png");
+    height: 100vh;
+}
+
+nav {
+    background: rgb(236, 232, 232) !important;
+}
+
+.team_listing_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 5px -3px rgb(0 0 0 / 75%);
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    height: 100%;
+}
+
+.team_listing_box_image {
+    height: 250px;
+}
+
+.team_listing_box_image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.team_title_line {
+    position: relative;
+    margin: 18px 0 40px;
+    text-align: center;
+    text-transform: capitalize;
+    min-height: 25px;
+}
+
+.team_listing_box p {
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    font-weight: 700;
+    line-height: 25px;
+}
+
+.team_title_line {
+    position: relative;
+    margin: 18px 0 40px;
+    text-align: center;
+    text-transform: capitalize;
+    min-height: 25px;
+}
+
+.gradient_highlighter:after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: blue;
+    background: linear-gradient(95deg, blue 0, blue 100%);
+    transition: width 0.3s;
+    bottom: -20px;
+    left: calc(50% - 50px);
+}
+
+.title {
+    font-size: 28px !important;
+    margin-bottom: 40px !important;
+    letter-spacing: -1px !important;
+    line-height: 1 !important;
+}
